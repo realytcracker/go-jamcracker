@@ -2,7 +2,7 @@
 a simple [animal jam](https://animaljam.com) brute force password cracker using concurrency written in [golang](https://golang.org).
 
 ## disclaimer
-**DO NOT ACTUALLY USE THIS UTILITY TO CRACK ACCOUNTS** - you will most likely get banished **permanently** from jamaa and have all your rare long spikes, headdresses, and beta tails stripped away.  i originally wrote this application with my daughter @mandarinp to teach her some programming + security basics, and to demonstrate how easy it is to bootstrap useful applications in go.  this was all originally done in our private repo, but i have decided to make the utility public and comment it accordingly for aspiring young coders like my daughter to follow along and hopefully travel down the path of True Ultimate Power.
+**DO NOT ACTUALLY USE THIS UTILITY TO CRACK ACCOUNTS** - you will most likely get banished **permanently** from jamaa and have all your rare long spikes, headdresses, and beta tails stripped away.  i originally wrote this application with my daughter [@mandarinp](https://github.com/mandarinp) to teach her some programming + security basics, and to demonstrate how easy it is to bootstrap useful applications in go.  this was all originally done in our private repo, but i have decided to make the utility public and comment it accordingly for aspiring young coders like my daughter to follow along and hopefully travel down the path of True Ultimate Power.
 
 ## installation
 this application makes use of the golang standard libraries.
@@ -29,7 +29,7 @@ Usage of ./go-jamcracker:
   -u string
     	path to file containing usernames (default "usernames.txt")
 ```
-good wordlists can be found in @danielmiessler's [SecLists](https://github.com/danielmiessler/SecLists) repository.
+good wordlists can be found in [@danielmiessler](https://github.com/danielmiessler)'s [SecLists](https://github.com/danielmiessler/SecLists) repository.
 
 ## license
 MIT
