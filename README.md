@@ -6,7 +6,7 @@ a simple [animal jam](https://animaljam.com) brute force password cracker using 
 
 ## installation
 this application makes use of the golang standard libraries.
-set up your golang environment and run `go install github.com/realytcracker/go-jamcracker`.
+set up your golang environment and run `go get github.com/realytcracker/go-jamcracker`.
 the binary will be located in `~/go/bin`.
 
 ## usage
