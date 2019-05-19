@@ -9,6 +9,13 @@ this application makes use of the golang standard libraries.
 set up your golang environment and run `go get github.com/realytcracker/go-jamcracker`.
 the binary will be located in `~/go/bin`.
 
+## known issues
+windows builds may fire back an `unexpected EOF` error during the `POST` operation when submitting a potential username and password combination.  this error has been discussed in other contexts on the Holy StackOverflow, and according to the Divine Verses Within, i suspect it is triggered because floating the `Connection: close` header is not sufficient to ensure the stream is terminated; `req` itself must contain `Close = true` so the connection does not get mistakenly reused.
+
+again, this is purely conjecture, and i could totally be wrong.
+
+workaround: run the application on linux or osx, both of which i have tested myself with success.
+
 ## usage
 ```
 $ ./go-jamcracker -h
