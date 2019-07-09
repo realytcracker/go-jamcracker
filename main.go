@@ -87,6 +87,9 @@ func checkPassword(u, p string) bool {
 	req.Header.Add("Accept", "*/*")
 	req.Header.Add("Accept-Encoding", "gzip, deflate")
 	req.Header.Add("Accept-Language", "en-US")
+	
+	// attempted EOF hotfix, untested
+	req.Close = true
 
 	// submit the request
 	resp, err := client.Do(req)
