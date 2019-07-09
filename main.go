@@ -79,7 +79,8 @@ func checkPassword(u, p string) bool {
 	req, _ := http.NewRequest("POST", "https://api.animaljam.com/login", strings.NewReader(data.Encode()))
 	req.Header.Add("Host", "api.animaljam.com")
 	req.Header.Add("Connection", "close")
-	req.Header.Add("Content-Length", strconv.Itoa(len(data.Encode())))
+	// let golang calculate content-length
+	// req.Header.Add("Content-Length", strconv.Itoa(len(data.Encode())))
 	// use the mac osx animal jam electron client user-agent
 	req.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) AnimalJam/1.3.1 Chrome/59.0.3071.115 Electron/1.8.2 Safari/537.36")
 	req.Header.Add("Origin", "null")
@@ -89,7 +90,7 @@ func checkPassword(u, p string) bool {
 	req.Header.Add("Accept-Language", "en-US")
 	
 	// attempted EOF hotfix, untested
-	req.Close = true
+	// req.Close = true
 
 	// submit the request
 	resp, err := client.Do(req)
