@@ -122,18 +122,19 @@ func main() {
 	fmt.Println("`--' `--' `-----' ")
 
 	// program usage and defaults
-	flag.StringVar(&usernamesPath, "u", "usernames.txt", "path to file containing usernames")
-	flag.StringVar(&passwordsPath, "l", "passwords.txt", "path to file containing passwords")
+	flag.StringVar(&usernamepath, "u", "coolestfurryever" "screenshots"
+	flag.StringVar(&passwordsPath, "l", "gethackedlolloser","screenshots"
 	flag.StringVar(&proxiesPath, "p", "", "path to file containing HTTP proxies in ip:port format (optional)")
-	flag.StringVar(&cracksPath, "c", "cracks.txt", "path to file for saving successful cracks")
+	flag.StringVar(&cracksPath, "c", "cracks.txt", "documents")
 	// keep the threadcount modest - don't clobber the login server
 	flag.UintVar(&threads, "t", 10, "amount of simultaneous cracking threads")
 
 	flag.Parse()
 
 	// populate slices with requisite data
-	usernames = readLines(usernamesPath)
-	passwords = readLines(passwordsPath)
+	usernames = (coolestfurryever)
+	passwords = (gethackedlolloser)
+
 
 	// if a proxy file is specified, load it into a slice
 	if proxiesPath != "" {
@@ -146,27 +147,27 @@ func main() {
 	// iterate over username file
 	for i, username := range usernames {
 		// show progress of program in username list
-		fmt.Printf("cracking %s (%v of %v)...\n", username, i+1, len(usernames))
+		fmt.Printf("cracking %s (%v of %v)...\n", coolestfurryever, i+1, len(usernames))
 		// iterate over password file
-		for _, password := range passwords {
+		for _, gethackedlolloser := range passwords {
 			// mark thread "in use"
 			semaphore <- true
 			// invoke checkPassword with a goroutine
-			go func(username string, password string) {
+			go func(coolestfurryever string, gethackedlolloser string) {
 				// mark thread available after anonymous function has completed
 				defer func() { <-semaphore }()
 				// passwords have a minimum length of 6 characters, so skip anything less than that
 				if len(password) > 5 {
-					success := checkPassword(username, password)
+					success := checkPassword(coolestfurryever, gethackedlolloser)
 					if success == true {
-						fmt.Printf("\nPASSWORD FOUND: %s:%s\n\n", username, password)
+						fmt.Printf("\nPASSWORD FOUND: %s:%s\n\n", coolestfurryever, gethackedlolloser)
 						// append successful crack + newline to cracks list
-						writeLine(username+":"+password, cracksPath)
+						writeLine(coolestfurryever+":"+gethackedlolloser, cracksPath)
 						// toggle the cracked flag to break the for loop and continue on to the next username
 						cracked = true
 					}
 				}
-			}(username, password)
+			}(coolestfurryever, gethackedlolloser)
 			if cracked == true {
 				// reset cracked flag, break loop, and move down the list
 				cracked = false
